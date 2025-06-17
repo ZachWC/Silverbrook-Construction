@@ -1,0 +1,267 @@
+/* Reset default padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+body, html {
+    width: 100%;  /* Ensure no horizontal scroll */
+    height: 100%; /* Ensure the page takes full height */
+}
+
+/********HEADER*********/
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: flex-start; /* Align the logo to the left */
+  }
+  
+  .logo img {
+    height: 100px;
+  }
+  
+  /* Menu */
+  nav.menu {
+    display: flex;
+    justify-content: flex-end; /* Align the menu items to the right */
+  }
+  
+  nav.menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav.menu ul li {
+    margin-left: 20px;
+  }
+  
+  nav.menu ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* *******HAM MENU******* */
+
+        /* Menu links styling */
+        .menu-links {
+            display: none; /* Initially hidden */
+            background-color: #333;
+            position: absolute;
+            top: 50px; /* Adjust if needed */
+            left: 0;
+            width: 100%;
+        }
+
+        .menu-links ul {
+            list-style: none;
+        }
+
+        .menu-links ul li {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .menu-links ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Hover effect for links */
+        .menu-links ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* Show menu links when the hamburger icon is clicked */
+        .menu-links.active {
+            display: block;
+        }
+
+         /* Hamburger icon (three bars) */
+         .hamburger {
+            font-size: 10px; /* Increased font size for a larger hamburger */
+            color: black;
+            cursor: pointer;
+            display: block;
+            height: 10px; /* You can adjust this if you want more space */
+            width: 10px; /* Make the hamburger a square for better proportions */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+  /* Show hamburger on small screens */
+  @media (max-width: 768px) {
+
+    .menu-container {
+        padding: 10px;
+    }
+
+    /* Adjust hamburger icon size for smaller screens */
+    .hamburger {
+        font-size: 35px;
+    }
+
+    /* Make the menu links take full width */
+    .menu-links {
+        width: 100%; /* Full width */
+        position: fixed; /* Keep it on the screen */
+        top: 0;
+        left: 0;
+        height: 100vh; /* Full height */
+        background-color: #333;
+        z-index: 9999; /* Make sure it appears on top */
+    }
+
+    /* Style the list items */
+    .menu-links ul {
+        margin-top: 60px; /* Add space for the hamburger icon */
+    }
+
+    /* Add some padding and ensure the links are stacked */
+    .menu-links ul li {
+        padding: 15px;
+        border-bottom: 1px solid #575757; /* Optional: adds a border between links */
+    }
+
+    .menu-links ul li a {
+        font-size: 18px; /* Make text larger for readability */
+        padding: 10px;
+    }
+
+    header {
+        align-items: flex-start;
+    }
+
+    nav.menu ul {
+        display: none;
+        width: 100%;
+        padding-left: 0;
+    }
+
+    nav.menu ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Show the menu when .active is added */
+    nav.menu.active ul {
+        display: flex; /* Display the menu items when active */
+        flex-direction: column; /* Stack the items vertically */
+    }
+
+    .menu-container {
+        padding: 10px;
+    }
+  }
+  
+  /* Desktop view: Links visible */
+  @media (min-width: 769px) {
+  
+    nav.menu ul {
+      display: flex;
+      justify-content: flex-end; /* Ensure links are aligned right */
+    }
+
+    .hamburger {
+        display: none;
+    }
+  }
+  
+
+/********BODY********/
+
+.image-container {
+    position: relative; /* Ensures the text can be positioned on top */
+    background-image: url(images/room.jpg);
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center; /* Center the background image */
+    width: 100%; /* Make the container span full width */
+    height: 80%; /* Set a fixed height (you can adjust this to your needs) */
+    border-bottom: 2px solid #333;
+    border-top: 2px solid #333;
+  }
+  
+  /* Text on top of the background */
+  .text-overlay {
+    position: absolute; /* Position it relative to the .image-container */
+    top: 50%; /* Align vertically in the middle */
+    left: 50%; /* Align horizontally in the middle */
+    transform: translate(-50%, -50%); /* Center the text */
+    text-align: center; /* Center the text */
+    color: #333; /* White text color for contrast */
+    /*font-family: Arial, sans-serif; /* Choose the font */
+  }
+  
+  .text-overlay h1 {
+    font-size: 36px; /* Adjust size for the first line */
+    margin: 0;
+  }
+  
+  .text-overlay h2 {
+    font-size: 24px; /* Adjust size for the second line */
+    margin: 0;
+  }
+  
+    
+/********FOOTER********/ 
+
+       /* Footer styles (Fixed at the bottom) */
+footer {
+    background-color: #333; /* Dark background for the footer */
+    color: white; /* White text color */
+    padding:7px; /* Padding around the footer */
+    text-align: center; /* Center the content */
+    /*position: fixed; Make the footer fixed at the bottom */
+    bottom: 0; /* Align it to the bottom */
+    left: 0; /* Ensure it's aligned to the left */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+    /* Footer content styling */
+    .footer-content {
+        display: flex;
+        justify-content: center; /* Center the content horizontally */
+        align-items: center; /* Align items vertically */
+        gap: 20px; /* Space between the links */
+    }
+
+    /* Facebook link styling */
+    .facebook-link {
+        color: white; /* White text for the link */
+        text-decoration: none; /* Remove underline */
+        font-size: 16px; /* Font size for the link */
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+    }
+
+    .facebook-link:hover {
+        color: #3b5998; /* Facebook's brand blue color on hover */
+    }
+
+    /* Phone number link styling */
+    .phone-number {
+        color: rgb(0, 0, 0); /* White text for the phone number */
+        text-decoration: none; /* Remove underline */
+        font-size: 22px; /* Font size for the phone number */
+        transition: color 0.3s ease; /* Smooth transition for hover effect */
+        font-weight: bold;
+        /*font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .phone-number:hover {
+        color: white; /* Yellow color on hover for phone number */
+    }
